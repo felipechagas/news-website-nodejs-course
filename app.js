@@ -5,12 +5,16 @@ app.set('view engine', 'ejs');
 //app.set('view engine', 'vue'); 
 
 
-app.get('/tec', function(req, res) {
-    res.render("ejs/session/tech");
+app.get('/', function(req, res) {
+    res.render("ejs/home/index");
 });
 
-app.get('/', function(req, res) {
-    res.send("<html><body>Teste</body></html>");
+app.get('/formulario_inclusão_noticia', function(req, res) {
+    res.render("ejs/admin/form_add_noticia");
+});
+
+app.get('/noticias', function(req, res) {
+    res.render("ejs/noticias/noticias");
 });
 
 app.listen(3000, function() {
