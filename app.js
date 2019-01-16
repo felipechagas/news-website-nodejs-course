@@ -4,12 +4,13 @@ var app = express();
 app.set('view engine', 'ejs');
 //app.set('view engine', 'vue'); 
 
-app.get('/', function(req, res) {
-    res.send("<html><body>Teste</body></html>");
-});
 
 app.get('/tec', function(req, res) {
-    res.send("<html><body>Tec</body></html>");
+    res.render("ejs/session/tech");
+});
+
+app.get('/', function(req, res) {
+    res.send("<html><body>Teste</body></html>");
 });
 
 app.listen(3000, function() {
