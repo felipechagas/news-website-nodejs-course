@@ -2,11 +2,25 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Notícias</title>
+			<title>Notï¿½cias</title>
 		</head>
 	<body>
 
-		<h1>Notícias</h1>
+		<h1>Notï¿½cias</h1>
+
+		<table>
+			<th>ID</th>
+			<th>Titulo</th>
+			<th>Noticia</th>
+
+			<% for(var i=0; i < noticias.length; i++) { %>
+				<tr>
+					<td><%= noticias[i].id_news; %></td>
+					<td><%= noticias[i].headline; %></td>
+					<td><%= noticias[i].new; %></td>
+				</tr>
+			<% } %>
+		</table>
 
 	</body>
 </html>
