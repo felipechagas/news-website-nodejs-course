@@ -1,11 +1,4 @@
-var express = require('express');
-var msg = require('./mod_teste');
-
-var app = express();
-
-app.set('view engine', 'ejs');
-//app.set('view engine', 'vue'); 
-
+var app = require('./config/server');
 
 app.get('/', function(req, res) {
     res.render("ejs/home/index");
@@ -20,5 +13,5 @@ app.get('/noticias', function(req, res) {
 });
 
 app.listen(3000, function() {
-    console.log(msg());
+    console.log("Running on http://localhost:1234");
 });
