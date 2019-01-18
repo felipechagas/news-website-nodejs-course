@@ -1,12 +1,12 @@
-module.exports = function(application) {  
+module.exports = function(app) {  
     
-    application.get('/noticias', function(req, res) {
+    app.get('/noticias', function(req, res) {
 
-        var connection = application.config.dbConnection();
-        var newsModel = application.app.models.newsModel;
-
-        newsModel.getNews(connection, function(error, result){
-            res.render("ejs/noticias/noticias", {noticias : result}); 
-        });
+        var connection = app.config.dbConnection();
+        var newsModel = new app.models.NewsDAO(connection);
+        
+        newsModel.getNews(function(error, result){
+            res.render("ejs/noticias/noticias", {noticias : result});
+        }); 
     });
 };
