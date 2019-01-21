@@ -12,12 +12,18 @@
 			<th>ID</th>
 			<th>Titulo</th>
 			<th>Noticia</th>
+			<th>Resumo</th>
+			<th>Autor</th>
+			<th>Data</th>
 
 			<% for(var i=0; i < noticias.length; i++) { %>
 				<tr>
 					<td><%= noticias[i].id_news; %></td>
 					<td><%= noticias[i].headline; %></td>
 					<td><%= noticias[i].new; %></td>
+					<td><%= noticias[i].short; %></td>
+					<td><%= noticias[i].author; %></td>
+					<td><%= noticias[i].dt_news; %></td>
 				</tr>
 			<% } %>
 		</table>
