@@ -8,6 +8,8 @@ app.set('view engine', 'ejs');
 // app.set('view engine', 'vue');
 app.set('views', './app/views');
 
+
+app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extend:true}));
 app.use(expressValidator());
 

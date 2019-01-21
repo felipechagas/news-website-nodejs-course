@@ -1,5 +1,5 @@
 module.exports.form = function(app, req, res) {
-    res.render("ejs/admin/form_add_noticia", {validacao: {}, news: {}});
+    res.render("ejs/admin/form_add_noticia", {validation: {}, news: {}});
 }
 
 module.exports.save_news = function(app, req, res) {
@@ -16,7 +16,7 @@ module.exports.save_news = function(app, req, res) {
     var erros = req.validationErrors();
 
     if(erros) {
-        res.render("ejs/admin/form_add_noticia", {validacao: erros, news: news});
+        res.render("ejs/admin/form_add_noticia", {validation: erros, news: news});
 
         return;
     }
@@ -25,6 +25,6 @@ module.exports.save_news = function(app, req, res) {
     var newsModel = new app.models.NewsDAO(connection);
     
     newsModel.postNews(news, function(error, result){
-        res.redirect('/noticias');
+        res.redirect('/news');
     });
 }
