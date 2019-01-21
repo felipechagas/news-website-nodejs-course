@@ -10,25 +10,37 @@
 
 		<br/>
 
+		<% if(validacao) { %>
+
+			<ul>
+				<% for(var i = 0; i < validacao.length; i++) { %>
+					<li>
+						<%= validacao[i].msg; %>
+					</li>
+				<% } %>
+			</ul>
+
+		<% } %> 
+
 		<form action="news/save" method="POST">
 			<label for="">Titulo</label>
-			<input name="headline" type="text" id="headline" placeholder="Titulo da noticia"/>
+			<input name="headline" type="text" value="<%=news.headline%>" id="headline" placeholder="Titulo da noticia"/>
 			<br/>
 
 			<label for="">Resumo</label>
-			<input name="short" type="text" id="short" placeholder="Resumo da noticia"/>
+			<input name="short" type="text" value="<%=news.short%>" id="short" placeholder="Resumo da noticia"/>
 			<br/>
 
 			<label for="">Autor</label>
-			<input name="author" type="text" id="author" placeholder="Autor da noticia"/>
+			<input name="author" type="text" value="<%=news.author%>" id="author" placeholder="Autor da noticia"/>
 			<br/>
 
 			<label for="">Data</label>
-			<input name="dt_news" type="date" id="dt_news" placeholder="Data da noticia"/>
+			<input name="dt_news" type="date" value="<%=news.dt_news%>" id="dt_news" placeholder="Data da noticia"/>
 			<br/>
 
 			<label for="">Noticia</label>
-			<textarea name="new" id="new" cols="30" rows="5"></textarea>
+			<textarea name="new" value="<%=news.new%>" id="new" cols="30" rows="5"></textarea>
 			<br/>
 
 			<input type="submit" value="Enviar" />
