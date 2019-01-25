@@ -4,6 +4,6 @@ module.exports = function(app) {
     });
 
     app.post('/news/save', function(req, res) {
-        app.controllers.admin.save_news(app, req, res);        
+        app.controllers.admin.save_news(app, req, res);
     });
 }
